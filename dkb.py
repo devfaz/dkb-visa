@@ -736,6 +736,8 @@ if __name__ == '__main__':
         #fetcher.br.set_debug_redirects(True)
 
     def get_pin_callback():
+        if os.environ.get('PIN'):
+            pin = os.environ.get('PIN')
         if os.isatty(0):
             pin = ""
             while not pin.strip():
